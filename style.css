@@ -12,14 +12,23 @@ h1 {
     margin: .5em 0 1em;
 }
 
+.l-margin {
+    margin: 1em auto
+}
+
 #grid {
-    margin: 0 auto;
     border-spacing: 0;
     border-collapse: collapse;
 }
 
     #grid td {
         border: 1px solid gray;
+    }
+
+    @-webkit-keyframes birth {
+        50% {
+            background-color: green;
+        }
     }
 
     #grid input[type="checkbox"] {
@@ -32,4 +41,33 @@ h1 {
     }
         #grid input[type="checkbox"]:checked {
             background-color: black;
+            -webkit-animation: birth .5s;
+            animation: birth .5s;
         }
+
+button,
+.button {
+    padding: .3em .5em; //the top padding should always shorter than left right padding because of visual effect
+    width: 3.5em;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3em;
+    box-shadow: 0 1px 0 hsla(0,0%,100%,.7) inset, 
+                0 .2em .2em rgba(0,0,0,.4);
+    background-color: hsl(92,70%,37%);
+    font: inherit;
+    color: white;
+    font-weight: bold;
+    outline: none;
+}
+
+button:enabled:active,
+.button:active,
+input[type="checkbox"]:checked + label.button {
+    background-image: none;
+    box-shadow: 0 .1em .3em rgba(0,0,0,.5) inset;
+}
+
+#autoplay {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
